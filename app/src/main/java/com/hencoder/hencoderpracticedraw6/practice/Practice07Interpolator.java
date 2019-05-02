@@ -1,5 +1,9 @@
 package com.hencoder.hencoderpracticedraw6.practice;
 
+import android.animation.AnimatorSet;
+import android.animation.Keyframe;
+import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.content.Context;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
@@ -11,6 +15,7 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnticipateInterpolator;
 import android.view.animation.AnticipateOvershootInterpolator;
 import android.view.animation.BounceInterpolator;
@@ -26,6 +31,8 @@ import android.widget.Spinner;
 
 import com.hencoder.hencoderpracticedraw6.R;
 import com.hencoder.hencoderpracticedraw6.Utils;
+
+import java.security.Key;
 
 /**
  * Interpolator 就别练了，没什么好练的，Practice 和 Sample 的代码是一毛一样的。

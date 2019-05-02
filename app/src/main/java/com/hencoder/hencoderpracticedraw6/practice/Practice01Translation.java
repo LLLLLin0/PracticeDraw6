@@ -1,5 +1,8 @@
 package com.hencoder.hencoderpracticedraw6.practice;
 
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Outline;
 import android.graphics.Path;
@@ -7,8 +10,10 @@ import android.os.Build;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.AttributeSet;
+import android.util.Property;
 import android.view.View;
 import android.view.ViewOutlineProvider;
+import android.view.animation.PathInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -45,10 +50,29 @@ public class Practice01Translation extends RelativeLayout {
             imageView.setOutlineProvider(new MusicOutlineProvider());
         }
 
+
         animateBt.setOnClickListener(new OnClickListener() {
+            private int i = 0;
+            @SuppressLint("WrongConstant")
             @Override
             public void onClick(final View v) {
                 // TODO 在这里处理点击事件，通过 View.animate().translationX/Y/Z() 来让 View 平移
+                i %= 4;
+                switch (i) {
+                    case 0:
+                        imageView.animate().translationX(100);
+                        break;
+                    case 1:
+                        imageView.animate().translationXBy(-100);
+                        break;
+                    case 2:
+                        imageView.animate().translationY(100);
+                        break;
+                    case 3:
+                        imageView.animate().translationYBy(-100);
+                        break;
+                }
+                i++;
             }
         });
     }

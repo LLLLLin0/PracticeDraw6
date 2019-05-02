@@ -62,9 +62,17 @@ public class Practice06Duration extends LinearLayout {
         animateBt = (Button) findViewById(R.id.animateBt);
         imageView = (ImageView) findViewById(R.id.imageView);
         animateBt.setOnClickListener(new OnClickListener() {
+            private int i = 0;
             @Override
             public void onClick(View v) {
                 // TODO 在这里处理点击事件，执行动画。记得使用 `setDuration(duration)` 来设置动画的时长。
+                i %= 2;
+                if (i == 0) {
+                    imageView.animate().translationX(600).setDuration(durationSb.getProgress() * 300);
+                } else {
+                    imageView.animate().translationXBy(-600).setDuration(durationSb.getProgress() * 300);
+                }
+                i++;
             }
         });
     }
